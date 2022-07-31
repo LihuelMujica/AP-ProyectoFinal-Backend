@@ -67,4 +67,10 @@ public class SkillController {
         skill.setId(id);
         return new ResponseEntity<>(service.update(skill), HttpStatus.OK);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> delete(@PathVariable("id") int id) throws ResourceNotFoundException {
+        service.delete(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
