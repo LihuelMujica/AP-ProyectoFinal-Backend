@@ -7,9 +7,11 @@ import com.argentinaprograma.portfolio.persistence.repository.SkillRepository;
 import com.argentinaprograma.portfolio.service.ISkillService;
 import com.argentinaprograma.portfolio.util.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ISkillServiceImpl implements ISkillService {
     private final SkillRepository repository;
 
