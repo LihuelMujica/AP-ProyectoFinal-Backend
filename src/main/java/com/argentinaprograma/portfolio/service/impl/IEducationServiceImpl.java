@@ -41,6 +41,8 @@ public class IEducationServiceImpl implements IEducationService {
     @Override
     public Education update(Education education) throws ResourceNotFoundException {
         Education newEducation = getById(education.getId());
+        System.out.println(newEducation);
+        System.out.println(education);
         Utils.copyProperties(education,newEducation);
         return repository.save(newEducation);
     }

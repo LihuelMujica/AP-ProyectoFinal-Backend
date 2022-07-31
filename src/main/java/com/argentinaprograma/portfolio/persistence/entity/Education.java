@@ -23,9 +23,9 @@ public class Education {
     @Column(name = "descripcion")
     private String description;
     @Column(name = "fecha_inicio")
-    private Date startDate;
+    private Date start;
     @Column(name = "fecha_fin")
-    private Date endDate;
+    private Date end;
     @Column(name = "imagen")
     private String image;
 }
