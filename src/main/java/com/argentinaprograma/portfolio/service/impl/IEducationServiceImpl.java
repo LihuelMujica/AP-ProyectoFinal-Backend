@@ -34,7 +34,7 @@ public class IEducationServiceImpl implements IEducationService {
 
     @Override
     public Education create(Education education) throws ResourceAlreadyExistsException {
-        if(repository.existsById(education.getId())) throw new ResourceAlreadyExistsException("An education with this id already exists");
+        if(education.getId() != null && repository.existsById(education.getId())) throw new ResourceAlreadyExistsException("An education with this id already exists");
         return repository.save(education);
     }
 
