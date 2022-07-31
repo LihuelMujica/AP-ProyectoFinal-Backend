@@ -7,9 +7,11 @@ import com.argentinaprograma.portfolio.persistence.repository.SocialMediaReposit
 import com.argentinaprograma.portfolio.service.ISocialMediaService;
 import com.argentinaprograma.portfolio.util.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ISocialMediaServiceImpl implements ISocialMediaService {
     private final SocialMediaRepository repository;
 
