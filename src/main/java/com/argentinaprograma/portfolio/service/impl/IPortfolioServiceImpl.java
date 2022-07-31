@@ -4,6 +4,7 @@ import com.argentinaprograma.portfolio.exception.ResourceNotFoundException;
 import com.argentinaprograma.portfolio.persistence.entity.Portfolio;
 import com.argentinaprograma.portfolio.persistence.repository.PortfolioRepository;
 import com.argentinaprograma.portfolio.service.IPortfolioService;
+import com.argentinaprograma.portfolio.util.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,17 +24,18 @@ public class IPortfolioServiceImpl implements IPortfolioService {
 
     @Override
     public Portfolio update(Portfolio portfolio) throws ResourceNotFoundException {
-        Portfolio oldPortfolio = get();
+        Portfolio newPortfolio = get();
         if(portfolio.getId() != null && portfolio.getId() != 1){
             throw new ResourceNotFoundException("Portfolio not found");
         }
-        if(portfolio.getId() == null) portfolio.setId(oldPortfolio.getId());
-        if(portfolio.getAbout()==null) portfolio.setAbout(oldPortfolio.getAbout());
-        if(portfolio.getCoverPicture()==null) portfolio.setCoverPicture(oldPortfolio.getCoverPicture());
-        if(portfolio.getDescription()==null) portfolio.setDescription(oldPortfolio.getDescription());
-        if(portfolio.getName()==null) portfolio.setName(oldPortfolio.getName());
-        if(portfolio.getProfilePicture()==null) portfolio.setProfilePicture(oldPortfolio.getProfilePicture());
-        portfolio.setId(1);
-        return portfolioRepository.save(portfolio);
+//        if(portfolio.getId() == null) portfolio.setId(oldPortfolio.getId());
+//        if(portfolio.getAbout()==null) portfolio.setAbout(oldPortfolio.getAbout());
+//        if(portfolio.getCoverPicture()==null) portfolio.setCoverPicture(oldPortfolio.getCoverPicture());
+//        if(portfolio.getDescription()==null) portfolio.setDescription(oldPortfolio.getDescription());
+//        if(portfolio.getName()==null) portfolio.setName(oldPortfolio.getName());
+//        if(portfolio.getProfilePicture()==null) portfolio.setProfilePicture(oldPortfolio.getProfilePicture());
+//        portfolio.setId(1);
+        Utils.copyProperties(portfolio,newPortfolio);
+        return portfolioRepository.save(newPortfolio);
     }
 }
