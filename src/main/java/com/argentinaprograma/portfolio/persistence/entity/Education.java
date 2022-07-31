@@ -16,7 +16,7 @@ import java.util.Date;
 public class Education {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_experiencias")
+    @Column(name = "id_educacion")
     private Integer id;
     @Column(name = "titulo")
     private String title;
