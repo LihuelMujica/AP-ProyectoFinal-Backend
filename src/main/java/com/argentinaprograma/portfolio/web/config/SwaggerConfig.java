@@ -24,11 +24,11 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfo(
-                "Dentist API",
-                "An api for managging a dental clinic ",
+                "Portfolio API",
+                "An api for managing my portfolio ",
                 "0.0.1",
                 "Terms of service",
-                new Contact("John Doe", "www.example.com", "myeaddress@company.com"),
+                new Contact("Alex Lihuel Mujica", "https://www.linkedin.com/in/lihuelmujica/", "lihuelmujica@gmail.com"),
                 "License of API", "API license URL", Collections.emptyList());
     }
 }
