@@ -17,7 +17,7 @@ public class Project {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_proyecto")
     private Integer id;
-    @Column(name = "title")
+    @Column(name = "titulo")
     private String title;
     @Column(name = "descripcion")
     private String description;
